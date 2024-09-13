@@ -41,15 +41,13 @@ def device_manager(app, item):
     os.system('devmgmt.msc')
 
 
-poller = Poller(poll_ports_period_ms=3000, update_port_list=update_ports)
+poller = Poller(poll_ports_period_ms=1000, update_port_list=update_ports)
 
 image = Image.open(Path.cwd() / "pic" / "sign_16265537.png")
 tray_app = Icon('COM-viewer', image, menu=Menu(
         MenuItem('Диспетчер', device_manager),
         MenuItem('Выход', exit_tray),
     ))
-
-# *[MenuItem(ports[i], None) for i in range(len(ports))],
 
 
 def main():
