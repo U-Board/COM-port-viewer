@@ -4,17 +4,30 @@ import win32console
 from PIL import Image
 from pathlib import Path
 from pystray import Icon, MenuItem, Menu
+from win11toast import toast
 
 ports = ['COM1', 'COM2', 'COM3']
 
-def click(trayApp, item):
-    print(trayApp, item)
+
+def notify(tray_app, item):
+    icon = {'src': f'{Path.cwd() / "pic" / "sign_16265537.png"}',
+            'placement': 'appLogoOverride'
+            }
+    toast("Новое устройство", f'{item}',
+          button={'activationType': 'protocol', 'arguments': 'http:Dismiss', 'content': 'Закрыть'},
+          icon=icon,
+          duration='long'
+          )
+
+
+def click(tray_app, item):
+    print(tray_app, item)
 
 
 def main():
     image = Image.open(Path.cwd() / "pic" / "sign_16265537.png")
     tray_app = Icon('COM-viewer', image, menu=Menu(
-        MenuItem('Все порты:', Menu(*[MenuItem(ports[i], click) for i in range(len(ports))])),
+        MenuItem('Все порты:', Menu(*[MenuItem(ports[i], notify) for i in range(len(ports))])),
         MenuItem('Диспетчер', click),
         MenuItem('Выход', click),
     ))
