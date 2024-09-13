@@ -1,4 +1,3 @@
-import sys
 import os
 import win32gui
 import win32con
@@ -6,9 +5,7 @@ import win32console
 from PIL import Image
 from pathlib import Path
 from pystray import Icon, MenuItem, Menu
-from win11toast import toast
 from poller import Poller
-from PySide6.QtCore import QObject, Signal
 from serial.tools.list_ports_common import ListPortInfo
 
 
@@ -21,23 +18,12 @@ def update_ports(ports: list[ListPortInfo]):
     tray_app.update_menu()
 
 
-def notify(app, item):
-    icon = {'src': f'{Path.cwd() / "pic" / "sign_16265537.png"}',
-            'placement': 'appLogoOverride'
-            }
-    toast("Новое устройство", f'{item}',
-          button={'activationType': 'protocol', 'arguments': 'http:Dismiss', 'content': 'Закрыть'},
-          icon=icon,
-          duration='long'
-          )
-
-
-def exit_tray(app, item):
+def exit_tray(app):
     app.stop()
     poller.stop()
 
 
-def device_manager(app, item):
+def device_manager():
     os.system('devmgmt.msc')
 
 

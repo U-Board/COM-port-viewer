@@ -1,10 +1,23 @@
 import time
 import queue
-
+from pathlib import Path
 from serial.tools import list_ports
 from threading import Thread, Event
 from serial.tools.list_ports_common import ListPortInfo
 from PySide6.QtCore import QObject, Signal
+from win11toast import toast
+
+
+def notify(port: str, add_or_del: bool):
+    icon = {'src': f'{Path.cwd() / "pic" / "sign_16265537.png"}',
+            'placement': 'appLogoOverride'
+            }
+    cmd = "Новое устройство" if add_or_del else "Устройство удалено"
+    toast(cmd, f'{port}',
+          button={'activationType': 'protocol', 'arguments': 'http:Dismiss', 'content': 'Закрыть'},
+          icon=icon,
+          duration='long'
+          )
 
 
 def _get_time_ms():
@@ -46,18 +59,12 @@ class Poller(QObject, Thread):
                 for port in ports_now:
                     if port.vid and port.pid and port not in self._list_ports:
                         self._list_ports.append(port)
+                        notify(port.name, True)
                         self._update_list(self._list_ports)
-                        # print('-------------------')
-                        # print(f'Found port:')
-                        # print(port)
-                        # print('-------------------')
 
                 for port in self._list_ports:
                     if port not in ports_now:
                         self._list_ports.remove(port)
+                        # notify(port.name, False)
                         self._update_list(self._list_ports)
-                        # print('-------------------')
-                        # print(f'Lost port:')
-                        # print(port)
-                        # print('-------------------')
             time.sleep(0.001)
