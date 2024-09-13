@@ -27,7 +27,7 @@ def click(tray_app, item):
 def main():
     image = Image.open(Path.cwd() / "pic" / "sign_16265537.png")
     tray_app = Icon('COM-viewer', image, menu=Menu(
-        MenuItem('Все порты:', Menu(*[MenuItem(ports[i], notify) for i in range(len(ports))])),
+        *[MenuItem(ports[i], notify) for i in range(len(ports))],
         MenuItem('Диспетчер', click),
         MenuItem('Выход', click),
     ))
