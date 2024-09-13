@@ -1,3 +1,5 @@
+import sys
+
 import win32gui
 import win32con
 import win32console
@@ -24,12 +26,16 @@ def click(tray_app, item):
     print(tray_app, item)
 
 
+def exit_tray(tray_app, item):
+    tray_app.stop()
+
+
 def main():
     image = Image.open(Path.cwd() / "pic" / "sign_16265537.png")
     tray_app = Icon('COM-viewer', image, menu=Menu(
         *[MenuItem(ports[i], notify) for i in range(len(ports))],
         MenuItem('Диспетчер', click),
-        MenuItem('Выход', click),
+        MenuItem('Выход', exit_tray),
     ))
 
     # tray_app = Icon('COM-viewer', image, menu=Menu(MenuItem('Все порты:', Menu())))
