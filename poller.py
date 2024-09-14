@@ -1,22 +1,30 @@
 import time
 import queue
-from pathlib import Path
 from serial.tools import list_ports
 from threading import Thread, Event
 from serial.tools.list_ports_common import ListPortInfo
 from PySide6.QtCore import QObject, Signal
 from win11toast import toast
+import os
+import sys
+
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 
 def notify(port: str, add_or_del: bool):
-    icon = {'src': f'{Path.cwd() / "pic" / "sign_16265537.png"}',
-            'placement': 'appLogoOverride'
-            }
     cmd = "Новое устройство" if add_or_del else "Устройство удалено"
     toast(cmd, f'{port}',
           button={'activationType': 'protocol', 'arguments': 'http:Dismiss', 'content': 'Закрыть'},
-          icon=icon,
-          duration='long'
+          duration='long',
+          icon={'src': resource_path('sign_16265537.png'),
+                'placement': 'appLogoOverride'}
           )
 
 
