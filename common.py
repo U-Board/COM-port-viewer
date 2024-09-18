@@ -1,6 +1,7 @@
 import os
 import sys
 from win11toast import toast
+from serial.tools.list_ports_common import ListPortInfo
 
 ICON = 'sign_16265537.png'
 
@@ -25,9 +26,9 @@ def add_app_to_autostart():
             f'copy "{this_file}" "{user_path}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"')
 
 
-def notify(port: str, add_or_del: bool):
+def notify(port: ListPortInfo, add_or_del: bool):
     cmd = "Новое устройство" if add_or_del else "Устройство удалено"
-    toast(cmd, f'{port}',
+    toast(cmd, f'{port.name}\n{port.description[:-7]}',
           button={'activationType': 'protocol', 'arguments': 'http:Dismiss', 'content': 'Закрыть'},
           duration='long',
           icon={'src': resource_path(ICON),

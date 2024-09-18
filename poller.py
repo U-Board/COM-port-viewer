@@ -34,8 +34,7 @@ class Poller(Thread):
                 for port in ports_now:
                     if port.vid and port.pid and port not in self._list_ports:
                         self._list_ports.append(port)
-                        notify(port.name, True)
-
+                        notify(port, True)
                 for port in self._list_ports:
                     if port not in ports_now:
                         self._list_ports.remove(port)
