@@ -20,7 +20,7 @@ class COMViewer:
         menu = []
         if ports is not None:
             for i in range(len(ports)):
-                menu.append(MenuItem(ports[i].name, None))
+                menu.append(MenuItem(ports[i].name, Menu(MenuItem(ports[i].description, None))))
         menu.append(MenuItem('Диспетчер', device_manager))
         menu.append(MenuItem('Выход', self.exit_tray))
 
