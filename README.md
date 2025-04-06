@@ -13,7 +13,7 @@ This is a Windows application that can do the following things:
 
 ## 📦 Installation
 
-Download the latest release [from here]([https://pages.github.com/](https://github.com/U-Board/COM-port-viewer/releases)) and open the ```.exe```
+Download the latest release [from here](https://github.com/U-Board/COM-port-viewer/releases) and open the ```.exe```
 
 ***
 
