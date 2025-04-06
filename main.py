@@ -22,8 +22,8 @@ class COMViewer:
             for i in range(len(ports)):
                 menu.append(MenuItem(ports[i].description, None))
 
-        menu.append(MenuItem('Диспетчер устройств', device_manager))
-        menu.append(MenuItem('Выход', self.exit_tray))
+        menu.append(MenuItem('Device Manager', device_manager))
+        menu.append(MenuItem('Exit', self.exit_tray))
 
         self.tray_app.menu = Menu(*menu)
         self.tray_app.update_menu()
