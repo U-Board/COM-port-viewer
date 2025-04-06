@@ -4,7 +4,7 @@
 ***
 
 
-##📜 Usage
+## 📜 Usage
 
 This is a Windows application that can do the following things:
 * sends a notification with the COM port number when a new device is connected to the computer
