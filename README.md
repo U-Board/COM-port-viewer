@@ -11,7 +11,12 @@ This is a Windows application that can do the following things:
 * it is displayed in the system tray. By right-clicking, you can view all the current COM ports, call the dispatcher and close the application.
 * it is placed in auto-upload along the way ```"C:\Users\USERNAME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"```
 
+## 📦 Installation
+
+Download the latest release [from here]([https://pages.github.com/](https://github.com/U-Board/COM-port-viewer/releases)) and open the ```.exe```
+
 ***
+
 
 ![изображение](https://github.com/user-attachments/assets/345bfedd-0e4d-4904-9f3e-8e5687ad30e9)
 
@@ -21,6 +26,6 @@ This is a Windows application that can do the following things:
 
 ***
 
-Supported platforms:
+## 📚 Supported platforms:
 * Windows 10/11
 
