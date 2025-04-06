@@ -3,8 +3,8 @@
 [![PyInstaller](https://img.shields.io/static/v1?style=for-the-badge&label=PyInstaller&message=5.13.0&logo=Python&color=blue&labelColor=yellow)](https://pyinstaller.org/en/stable/)
 ***
 
-**Hi!**
 
+##📜 Usage
 
 This is a Windows application that can do the following things:
 * sends a notification with the COM port number when a new device is connected to the computer
