@@ -9,7 +9,7 @@
 This is a Windows application that can do the following things:
 * sends a notification with the COM port number when a new device is connected to the computer
 * it is displayed in the system tray. By right-clicking, you can view all the current COM ports, call the dispatcher and close the application.
-* it is placed in auto-upload along the way "C:\Users\USERNAME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+* it is placed in auto-upload along the way ```"C:\Users\USERNAME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"```
 
 ***
 
