@@ -19,12 +19,11 @@ After first execution application is placed in auto-startup.
 
 ***
 
-
-![изображение](https://github.com/user-attachments/assets/345bfedd-0e4d-4904-9f3e-8e5687ad30e9)
+![изображение](https://github.com/user-attachments/assets/ff520e05-a631-4ca9-a60c-92c6a63db3b1)
 
 ***
 
-![изображение](https://github.com/user-attachments/assets/73275bcc-ab35-46fa-ace0-e4a2096e3632)
+![изображение](https://github.com/user-attachments/assets/be8dcb1d-0d7c-4a39-8516-19e0312f8c02)
 
 ***
 
