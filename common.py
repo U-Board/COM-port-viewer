@@ -27,9 +27,9 @@ def add_app_to_autostart():
 
 
 def notify(port: ListPortInfo, add_or_del: bool):
-    cmd = "Новое устройство" if add_or_del else "Disconnected"
+    cmd = "Connected" if add_or_del else "Disconnected"
     toast(cmd, f'{port.name}\n{port.description[:-7]}',
-          button={'activationType': 'protocol', 'arguments': 'http:Dismiss', 'content': 'Exit'},
+          button={'activationType': 'protocol', 'arguments': 'http:Dismiss', 'content': 'Close'},
           duration='long',
           icon={'src': resource_path(ICON),
                 'placement': 'appLogoOverride'}

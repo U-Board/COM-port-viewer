@@ -6,14 +6,16 @@
 
 ## 📜 Usage
 
-This is a Windows application that can do the following things:
-* sends a notification with the COM port number when a new device is connected to the computer
-* it is displayed in the system tray. By right-clicking, you can view all the current COM ports, call the dispatcher and close the application.
-* it is placed in auto-upload along the way ```"C:\Users\USERNAME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"```
+COM port viewer is an application for Windows 10/11 only
+* Sends a notification when COM device is connected. Notification displays status, COM port number and device name.
+* Displayed in the system tray. There is menu with current COM ports, device manager and exit button on right-clicking.
+* Placed in auto-startup along the way ```"C:\Users\USERNAME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"```
 
 ## 📦 Installation
 
 Download the latest release [from here](https://github.com/U-Board/COM-port-viewer/releases) and open the ```.exe```
+Application will be shown in system tray as usb-device icon.
+After first execution application is placed in auto-startup.
 
 ***
 
